@@ -1,8 +1,8 @@
-@extends('content.admin.layout')
 
-@section('title', 'Dashboard')
 
-@section('content')
+<?php $__env->startSection('title', 'Dashboard'); ?>
+
+<?php $__env->startSection('content'); ?>
     <!-- Dashboard Container -->
     <div class="row d-flex justify-content-center">
         <!-- Statistik 1: Jumlah Pengguna -->
@@ -68,9 +68,11 @@
                 </div>
             </div>
         </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@push('scripts')
-    <script src="{{ asset('js/present.js') }}"></script>
-    <script src="{{ asset('js/absent.js') }}"></script>
-@endpush
+<?php $__env->startPush('scripts'); ?>
+    <script src="<?php echo e(asset('js/present.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/absent.js')); ?>"></script>
+<?php $__env->stopPush(); ?>
+
+<?php echo $__env->make('content.admin.layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\absensi-siswa\resources\views/content/admin/dashboard.blade.php ENDPATH**/ ?>
