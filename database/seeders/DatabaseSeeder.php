@@ -25,14 +25,14 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'wali_kelas1a',
             'email' => 'walikelas1a@gmail.com',
-            'role' => 'wali_kelas',
+            'role' => 'Wali Kelas',
             'password' => bcrypt('wali_kelas1a')
         ]);
 
         User::create([
             'name' => 'orangtua1',
             'email' => 'orangtua1@gmail.com',
-            'role' => 'ortu',
+            'role' => 'Orang Tua',
             'password' => bcrypt('ortu1')
         ]);
 

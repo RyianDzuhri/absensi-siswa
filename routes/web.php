@@ -34,4 +34,4 @@ Route::group(['middleware'=>'auth:ortu'], function(){
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Manajemen Users Route
-Route::get('/users', [UsersController:: class, 'index'])->name('users');
+Route::resource('users', UsersController::class);
