@@ -1,0 +1,1 @@
+@extends('content.admin.layout')

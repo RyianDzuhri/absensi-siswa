@@ -16,13 +16,13 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="bi bi-house-door me-2"></i>Dashboard</a>
+            <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}"><i class="bi bi-house-door me-2"></i>Dashboard</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-person-gear me-2"></i>Manajemen Pengguna</a></li>
+                    <li class="nav-item"><a href="{{ route('users') }}" class="nav-link"><i class="bi bi-person-gear me-2"></i>Pengguna</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-person-lines-fill me-2"></i>Siswa</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-house-door me-2"></i>Kelas</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-calendar-check me-2"></i>Absensi</a></li>
