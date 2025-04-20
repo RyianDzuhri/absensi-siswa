@@ -28,7 +28,8 @@
                     <i class="bi bi-person-lines-fill me-2"></i> Siswa
                 </div>
                 <div class="card-body card-body-custom text-center">
-                    200
+                    <?php echo e($totalSiswa); ?>
+
                 </div>
                 <div class="card-footer card-footer-custom">
                     Total siswa yang terdaftar
@@ -43,7 +44,8 @@
                     <i class="bi bi-house-door me-2"></i> Kelas
                 </div>
                 <div class="card-body card-body-custom text-center">
-                    10
+                    <?php echo e($totalKelas); ?>
+
                 </div>
                 <div class="card-footer card-footer-custom">
                     Total kelas yang ada

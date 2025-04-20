@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    use HasFactory, Notifiable;
+
     protected $fillable = [
         'name',
         'email',
@@ -16,12 +18,22 @@ class User extends Authenticatable
         'role',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
     protected $hidden = [
         'password',
     ];
+
+    public function kelas()
+    {
+        return $this->hasMany(Kelas::class, 'wali_kelas_id');
+    }
+
+    public function siswa()
+    {
+        return $this->hasMany(Siswa::class, 'ortu_id');
+    }
+
+    public function absensi_dibuat()
+    {
+        return $this->hasMany(Absensi::class, 'created_by');
+    }
 }

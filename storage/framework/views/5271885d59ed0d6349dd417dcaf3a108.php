@@ -23,8 +23,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a href="<?php echo e(route('content.admin.users')); ?>" class="nav-link"><i class="bi bi-person-gear me-2"></i>Pengguna</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-person-lines-fill me-2"></i>Siswa</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-house-door me-2"></i>Kelas</a></li>
+                    <li class="nav-item"><a href="<?php echo e(route('content.admin.siswa')); ?>" class="nav-link"><i class="bi bi-person-lines-fill me-2"></i>Siswa</a></li>
+                    <li class="nav-item"><a href="<?php echo e(route('content.admin.kelas')); ?>" class="nav-link"><i class="bi bi-house-door me-2"></i>Kelas</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-calendar-check me-2"></i>Absensi</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-bar-chart-line me-2"></i>Laporan</a></li>
                     <li class="nav-item"><a href="<?php echo e(route('logout')); ?>" class="nav-link"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
