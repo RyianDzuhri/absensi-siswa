@@ -12,7 +12,7 @@
                     <i class="bi bi-person-circle me-2"></i> Pengguna
                 </div>
                 <div class="card-body card-body-custom text-center">
-                    150
+                    {{ $totalUsers }}
                 </div>
                 <div class="card-footer card-footer-custom">
                     Total pengguna terdaftar

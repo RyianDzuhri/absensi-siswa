@@ -19,12 +19,22 @@ class UsersController extends Controller
     // Menyimpan data pengguna baru
     public function store(Request $request)
     {
-        // Validasi input
+        // Validasi input dengan custom messages
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
             'role' => 'required|in:Admin,Wali Kelas,Orang Tua',
+        ], [
+            'name.required' => 'Nama wajib diisi.',
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'email.unique' => 'Email sudah terdaftar.',
+            'password.required' => 'Password wajib diisi.',
+            'password.min' => 'Password minimal 8 karakter.',
+            'password.confirmed' => 'Konfirmasi password tidak cocok.',
+            'role.required' => 'Role wajib dipilih.',
+            'role.in' => 'Role tidak valid.',
         ]);
 
         // Menambahkan data pengguna baru ke dalam database
@@ -35,9 +45,9 @@ class UsersController extends Controller
             'role' => $validatedData['role'],
         ]);
 
-        // Redirect ke halaman pengguna dengan pesan sukses
         return redirect()->route('content.admin.users')->with('success', 'Pengguna berhasil ditambahkan.');
     }
+
 
     // Mengupdate data pengguna
     public function update(Request $request, $id)
@@ -73,7 +83,7 @@ class UsersController extends Controller
         // Hapus pengguna
         $user->delete();
         // Redirect ke halaman pengguna dengan pesan sukses
-        return redirect()->route('admin.users')->with('success', 'Pengguna berhasil dihapus.');
+        return redirect()->route('content.admin.users')->with('success', 'Pengguna berhasil dihapus.');
     }
 
 }

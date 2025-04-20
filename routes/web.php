@@ -18,8 +18,13 @@ Route::post('/login', [AuthController::class, 'verify'])->name('auth.verify');
 
 // Authentication Role Route
 Route::group(['middleware'=>'auth:admin'], function(){
-    Route::get('/admin/home', [DashboardController::class, 'index'])->name('admin.dashboard.index');
-}
+        Route::get('/admin/home', [DashboardController::class, 'index'])->name('admin.dashboard.index');
+        Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+        Route::get('/admin/users', [UsersController::class, 'index'])->name('content.admin.users');
+        Route::post('/admin/users', [UsersController::class, 'store'])->name('admin.users.store');
+        Route::put('/admin/users/{id}', [UsersController::class, 'update'])->name('admin.users.update');
+        Route::delete('/admin/users/{id}', [UsersController::class, 'destroy'])->name('admin.users.destroy');
+    }
 );
 Route::group(['middleware'=>'auth:wali_kelas'], function(){
         Route::get('/walikelas/home', [WaliKelasDashboardController::class, 'index'])->name('walikelas.dashboard.index');
@@ -34,4 +39,4 @@ Route::group(['middleware'=>'auth:ortu'], function(){
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Manajemen Users Route
-Route::resource('users', UsersController::class);
+
