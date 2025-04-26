@@ -8,7 +8,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/styleadmin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/stylewalikelas.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -21,7 +23,7 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="{{ route('walikelas.dashboard.index') }}" class="nav-link text-white">
+                <a href="{{ route('content.walikelas.dashboard') }}" class="nav-link text-white">
                     <i class="bi bi-speedometer2 me-2"></i>Dashboard
                 </a>
             </li>
@@ -31,7 +33,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link text-white">
+                <a href="{{ route('content.walikelas.absensi') }}" class="nav-link text-white">
                     <i class="bi bi-calendar-check me-2"></i>Absensi
                 </a>
             </li>

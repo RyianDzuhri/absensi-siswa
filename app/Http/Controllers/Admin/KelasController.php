@@ -13,7 +13,7 @@ class KelasController extends Controller
     public function index(): View
     {
         $kelas = Kelas::all();
-        $waliKelas = User::where('role', 'Wali Kelas')->get();
+        $waliKelas = User::where('role', 'wali_kelas')->get();
         return view('content.admin.kelas', compact('kelas', 'waliKelas'));
     }
     // Menyimpan data pengguna baru

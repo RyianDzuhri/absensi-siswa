@@ -15,7 +15,7 @@ class SiswaController extends Controller
     {   
         $siswa = Siswa::all();
         $kelas = Kelas::all();
-        $ortu = User::where('role', 'Orang Tua')->get();
+        $ortu = User::where('role', 'ortu')->get();
         return view('content.admin.siswa', compact('siswa', 'kelas', 'ortu'));
     }
     // Menyimpan data pengguna baru

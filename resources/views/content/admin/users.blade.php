@@ -73,9 +73,9 @@
                             <div class="form-group">
                                 <label>Role</label>
                                 <select name="role" class="form-control" required>
-                                    <option value="Admin" {{ old('role', $user->role) == 'Admin' ? 'selected' : '' }}>Admin</option>
-                                    <option value="Wali Kelas" {{ old('role', $user->role) == 'Wali Kelas' ? 'selected' : '' }}>Wali Kelas</option>
-                                    <option value="Orang Tua" {{ old('role', $user->role) == 'Orang Tua' ? 'selected' : '' }}>Orang Tua</option>
+                                    <option value="admin" {{ old('role', $user->role) == 'admin' ? 'selected' : '' }}>Admin</option>
+                                    <option value="wali_kelas" {{ old('role', $user->role) == 'wali_kelas' ? 'selected' : '' }}>Wali Kelas</option>
+                                    <option value="ortu" {{ old('role', $user->role) == 'ortu' ? 'selected' : '' }}>Orang Tua</option>
                                 </select>                                
                             </div>
                         </div>
@@ -134,10 +134,10 @@
                             <label>Role</label>
                             <select name="role" class="form-control" required>
                                 <option value="">-- Pilih Role --</option>
-                                <option value="Admin" {{ old('role') == 'Admin' ? 'selected' : '' }}>Admin</option>
-                                <option value="Wali Kelas" {{ old('role') == 'Wali Kelas' ? 'selected' : '' }}>Wali Kelas</option>
-                                <option value="Orang Tua" {{ old('role') == 'Orang Tua' ? 'selected' : '' }}>Orang Tua</option>
-                            </select>
+                                <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
+                                <option value="wali_kelas" {{ old('role') == 'wali_kelas' ? 'selected' : '' }}>Wali Kelas</option>
+                                <option value="ortu" {{ old('role') == 'ortu' ? 'selected' : '' }}>Orang Tua</option>
+                            </select>                            
                             @error('role')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror

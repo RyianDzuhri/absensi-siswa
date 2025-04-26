@@ -24,7 +24,7 @@ class UsersController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
-            'role' => 'required|in:Admin,Wali Kelas,Orang Tua',
+            'role' => 'required|in:admin,wali_kelas,ortu',
         ], [
             'name.required' => 'Nama wajib diisi.',
             'email.required' => 'Email wajib diisi.',
@@ -57,7 +57,7 @@ class UsersController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $id,
             'password' => 'nullable|string|min:8|confirmed',
-            'role' => 'required|in:Admin,Wali Kelas,Orang Tua',
+            'role' => 'required|in:admin,wali_kelas,ortu',
         ]);
 
         // Mengambil pengguna yang akan diupdate

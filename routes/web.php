@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrangTua\DashboardController as OrangTuaDashboardController;
+use App\Http\Controllers\WaliKelas\AbsensiController;
 use App\Http\Controllers\WaliKelas\DashboardController as WaliKelasDashboardController;
 use App\Models\Kelas;
 use Illuminate\Support\Facades\Route;
@@ -43,10 +44,14 @@ Route::group(['middleware'=>'auth:admin'], function(){
         Route::delete('/admin/siswa/{id}', [SiswaController::class, 'destroy'])->name('admin.siswa.destroy');
     }
 );
+
 Route::group(['middleware'=>'auth:wali_kelas'], function(){
-        Route::get('/walikelas/home', [WaliKelasDashboardController::class, 'index'])->name('walikelas.dashboard.index');
+        Route::get('/walikelas/home', [WaliKelasDashboardController::class, 'index'])->name('content.walikelas.dashboard');
+        Route::get('/walikelas/absensi', [AbsensiController::class, 'index'])->name('content.walikelas.absensi');
+        Route::post('/walikelas/absensi', [AbsensiController::class, 'store'])->name('walikelas.absensi.store');
     }
 );
+
 Route::group(['middleware'=>'auth:ortu'], function(){
         Route::get('/ortu/home', [OrangTuaDashboardController::class, 'index'])->name('ortu.dashboard.index');
     }
